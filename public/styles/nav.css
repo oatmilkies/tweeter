@@ -11,7 +11,7 @@
   padding-right: 1.5em;
 }
 
-.logo {
+span {
   font-family: "Bungee", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -21,4 +21,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.write-new-tweet {
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 1;
+  font-style: normal;
 }

@@ -11,7 +11,7 @@
   padding-right: 1.5em;
 }
 
-span {
+.nav-title {
   font-family: "Bungee", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -26,6 +26,6 @@ span {
 .write-new-tweet {
   font-family: "Source Sans 3", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 1;
+  font-weight: normal;
   font-style: normal;
 }

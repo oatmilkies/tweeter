@@ -1,8 +1,9 @@
-.nav-container {
+.nav-bar {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
   height: 120px;
   width: 100%;
   background-color: #4056A1;
@@ -15,6 +16,7 @@
   font-family: "Bungee", sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 46px;
 }
 
 .nav-new-tweet {

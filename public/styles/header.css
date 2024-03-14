@@ -2,8 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: end;
-  height: 520px;
+  justify-content: center;
+  height: 400px;
+  margin-top: 120px;
   background-color: orange;
   background-image: url("./black-thread.png");
 }

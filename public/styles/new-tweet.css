@@ -11,16 +11,12 @@
   margin-top: 20px;
 }
 
-.button-counter {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+.tweet-text {
+  font-weight: bold;
+}
+
+.textarea-container {
   width: 100%;
-  font-family: "Bungee", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 20px;
 }
 
 .tweet-box {
@@ -42,4 +38,16 @@
   background-color: #4056A1;
   border: none;
   padding: .3em
+}
+
+.button-counter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
 }

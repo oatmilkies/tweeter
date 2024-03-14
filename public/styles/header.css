@@ -6,5 +6,13 @@
   height: 400px;
   margin-top: 120px;
   background-color: orange;
-  background-image: url("./black-thread.png");
+  background-image: url("./crisp-paper-ruffles.png");
+}
+
+.user-name {
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  color: white;
 }

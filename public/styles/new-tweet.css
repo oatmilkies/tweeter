@@ -31,6 +31,7 @@
   background-color: #f4f1ec;
   color: #545149;
   margin: .5em 0;
+  padding-top: .2em;
 }
 
 .tweet-button {
@@ -39,6 +40,8 @@
   border: none;
   padding: .3em
 }
+
+.tweet-button:hover {background-color: orange;}
 
 .button-counter {
   display: flex;

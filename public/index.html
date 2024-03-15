@@ -6,8 +6,9 @@
   <title>Tweeter - Home Page</title>
 
   <!-- External CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css"
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
@@ -28,6 +29,7 @@
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 </head>
 
 <body>
@@ -55,18 +57,18 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
-      <div>
-        <form method="POST" action="http://localhost:8080/tweets">
-          <label class="tweet-text" for="tweet-text">What are you humming about?</label>
-      </div>
-      <div class="textarea-container">
-        <textarea class="tweet-box" name="text" id="tweet-text"></textarea>
-      </div>
-      <div class="button-counter">
-        <button class="tweet-button" type="submit">Tweet</button>
-        <output name="counter" class="counter" for="tweet-text">140</output>
-      </div>
+
+      <form method="POST" action="/tweets">
+        <label class="tweet-text" for="tweet-text">What are you humming about?</label>
+        <div class="textarea-container">
+          <textarea class="tweet-box" name="text" id="tweet-text"></textarea>
+        </div>
+        <div class="button-counter">
+          <button class="tweet-button" type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
       </form>
+
     </section>
   </main>
 </body>

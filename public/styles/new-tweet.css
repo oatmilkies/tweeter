@@ -17,6 +17,7 @@
 
 .textarea-container {
   width: 100%;
+  flex-grow: 1;
 }
 
 .tweet-box {

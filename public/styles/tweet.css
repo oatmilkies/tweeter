@@ -1,0 +1,40 @@
+.tweet {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  width: 100%;
+  border: 5px solid;
+  margin: 5%;
+}
+
+p {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 5px solid;
+  padding: 1%;
+  margin: 1% 2%;
+}
+
+header {
+  font-weight: lighter;
+  margin: 3% 3% 0;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: smaller;
+  margin: 0 3% 2% 3%
+}
+
+.fa-solid {
+  color: #4056A1;
+  margin: 2px;
+}
+
+.fa-solid:hover {color: orange;}

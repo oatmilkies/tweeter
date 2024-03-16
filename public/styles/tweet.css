@@ -11,6 +11,10 @@
   margin: 5%;
 }
 
+.tweet:hover {
+  box-shadow: 5px 5px 5px #969eb7;
+}
+
 p {
   border-top: none;
   border-left: none;

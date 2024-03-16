@@ -21,8 +21,15 @@ p {
 }
 
 header {
+  display: flex;
+  justify-content: space-between;
   font-weight: lighter;
   margin: 3% 3% 0;
+}
+
+.user-handle {
+  font-weight: bold;
+  color: #969eb7;
 }
 
 footer {

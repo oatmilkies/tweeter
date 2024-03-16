@@ -1,4 +1,4 @@
-.tweet {
+.past-tweets {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -11,11 +11,11 @@
   margin: 5%;
 }
 
-.tweet:hover {
+.past-tweets:hover {
   box-shadow: 5px 5px 5px #969eb7;
 }
 
-p {
+.tweet {
   border-top: none;
   border-left: none;
   border-right: none;
@@ -38,14 +38,14 @@ header {
 
 footer {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   font-size: smaller;
   margin: 0 3% 2% 3%
 }
 
-.fa-solid {
+.icons {
   color: #4056A1;
-  margin: 2px;
 }
 
 .fa-solid:hover {color: orange;}

@@ -8,6 +8,7 @@ $(document).ready(function() {
 
   const createTweetElement = function(tweetData) {
     //Create the tweet using the same format as in index.html
+    const tweetTime = timeago.format(tweetData["created_at"]);
     const markup = `
     <article class="tweet">
       <header>
@@ -16,7 +17,7 @@ $(document).ready(function() {
       </header>
       <p class="tweet-content">${tweetData.content.text}</p>
       <footer>
-        <span>${tweetData["created_at"]}</span>
+        <span>${tweetTime}</span>
         <span class="icons">
           <i class="fa-solid fa-flag"></i>
           <i class="fa-solid fa-retweet"></i>
@@ -39,7 +40,7 @@ $(document).ready(function() {
 
   };
 
-  //Post a new tweet
+  //Post a new
   $("#tweet-form").on("submit", function(event) {
     event.preventDefault();
 
@@ -65,8 +66,8 @@ $(document).ready(function() {
   //Load past tweets
   const loadTweets = function() {
     $.ajax("/tweets", "initial-tweets.json", { method: "GET"})
-    .then(initialTweets => renderTweets(initialTweets))
-    .catch(err => console.log(err))
+      .then(initialTweets => renderTweets(initialTweets))
+      .catch(err => console.log(err));
   };
 
   loadTweets();

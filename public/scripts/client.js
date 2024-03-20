@@ -68,4 +68,28 @@ $(document).ready(function() {
 
   renderTweets(data);
 
+
+  $("#tweet-form").on("submit", function(event) {
+    event.preventDefault();
+
+    const formData = $(this).find("#tweet-text");
+    const serializedData = formData.serialize();
+    
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: serializedData,
+      success: function(response) {
+        console.log("Tweet submitted!");
+        $("#tweet-text").empty();
+        
+      },
+      error: function(error) {
+        console.error("Couldn't submit tweet");
+      }
+    });
+
+    
+  })
+
 });

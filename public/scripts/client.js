@@ -41,14 +41,14 @@ $(document).ready(function() {
   };
 
 
-  //Load past tweets
-  const loadTweets = function() {
-    $.ajax("/tweets", "initial-tweets.json", { method: "GET" })
+  //Load tweets
+  const loadTweets = function(tweetData) {
+    $.ajax("/tweets", tweetData, { method: "GET" })
       .then(initialTweets => renderTweets(initialTweets))
       .catch(err => console.log(err));
   };
 
-  loadTweets();
+  loadTweets("initial-tweets.json");
 
 
   //Check that the tweet is not empty or too long
@@ -79,6 +79,8 @@ $(document).ready(function() {
       }).then((response) => {
         console.log("Tweet submitted!");
         formData.val("");
+        ('.tweet').remove();
+        loadTweets(serializedData);        
       }).catch((error) => { console.error("Couldn't submit tweet"); });
     }
   });

@@ -51,19 +51,25 @@ $(document).ready(function() {
   loadTweets();
 
 
-  //Post a new
+  //Check that the tweet is not empty or too long
+  const validateData = function(data) {
+    if (data.length > 140) {
+      $("#tweet-form").append("Tweet too long! Cannot submit");
+    } else if (data === "") {
+      $("#tweet-form").append("Cannot submit empty tweet");
+    } else
+      return false;
+  };
+
+
+  //Post a new tweet
   $("#tweet-form").on("submit", function(event) {
     event.preventDefault();
 
     const formData = $(this).find("#tweet-text");
     const serializedData = formData.serialize();
-    console.log(serializedData);
 
-    if (serializedData.length > 140) {
-      $(this).append("Tweet too long! Cannot submit");
-    } else if (serializedData === "text=") {
-      $(this).append("Cannot submit empty tweet");
-    } else {
+    if (validateData(formData.val())) {
       $.ajax({
         type: "POST",
         url: "/tweets",
@@ -73,7 +79,6 @@ $(document).ready(function() {
         formData.val("");
       }).catch((error) => { console.error("Couldn't submit tweet"); });
     }
-
   });
 
 });

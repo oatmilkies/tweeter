@@ -44,7 +44,10 @@ $(document).ready(function() {
   //Load tweets
   const loadTweets = function() {
     $.ajax("/tweets", "initial-tweets.json", { method: "GET" })
-      .then(initialTweets => renderTweets(initialTweets))
+      .then(initialTweets => {
+        $('.tweet-container').empty();
+        renderTweets(initialTweets)
+      })
       .catch(err => console.log(err));
   };
 

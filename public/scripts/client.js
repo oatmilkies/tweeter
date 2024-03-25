@@ -9,6 +9,7 @@ $(document).ready(function() {
   const createTweetElement = function(tweetData) {
     //Create the tweet using the same format as in index.html
     const tweetTime = timeago.format(tweetData["created_at"]);
+
     const markup = `
     <article class="tweet">
       <header>
@@ -37,8 +38,18 @@ $(document).ready(function() {
       const $tweet = createTweetElement(tweet);
       $('.tweet-container').prepend($tweet);
     }
-
   };
+
+
+  //Load past tweets
+  const loadTweets = function() {
+    $.ajax("/tweets", "initial-tweets.json", { method: "GET" })
+      .then(initialTweets => renderTweets(initialTweets))
+      .catch(err => console.log(err));
+  };
+
+  loadTweets();
+
 
   //Post a new
   $("#tweet-form").on("submit", function(event) {
@@ -46,30 +57,23 @@ $(document).ready(function() {
 
     const formData = $(this).find("#tweet-text");
     const serializedData = formData.serialize();
-    
-    $.ajax({
-      type: "POST",
-      url: "/tweets",
-      data: serializedData,
-      success: function(response) {
+    console.log(serializedData);
+
+    if (serializedData.length > 140) {
+      $(this).append("Tweet too long! Cannot submit");
+    } else if (serializedData === "text=") {
+      $(this).append("Cannot submit empty tweet");
+    } else {
+      $.ajax({
+        type: "POST",
+        url: "/tweets",
+        data: serializedData
+      }).then((response) => {
         console.log("Tweet submitted!");
-        $("#tweet-text").empty();
-        
-      },
-      error: function(error) {
-        console.error("Couldn't submit tweet");
-      }
-    });
-    
+        formData.val("");
+      }).catch((error) => { console.error("Couldn't submit tweet"); });
+    }
+
   });
-
-  //Load past tweets
-  const loadTweets = function() {
-    $.ajax("/tweets", "initial-tweets.json", { method: "GET"})
-      .then(initialTweets => renderTweets(initialTweets))
-      .catch(err => console.log(err));
-  };
-
-  loadTweets();
 
 });

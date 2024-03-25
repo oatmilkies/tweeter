@@ -5,6 +5,8 @@
  */
 
 $(document).ready(function() {
+  $('#error-too-long').hide();
+  $('#error-blank').hide();
 
   const createTweetElement = function(tweetData) {
     //Create the tweet using the same format as in index.html
@@ -66,11 +68,15 @@ $(document).ready(function() {
 
   //Check that the tweet is not empty or too long
   const validateData = function(data) {
+    $('#error-too-long').hide();
+    $('#error-blank').hide();
+
     if (data.length > 140) {
-      alert("Tweet too long. Cannot submit");
+      $('#error-too-long').slideDown("slow");
+      $('#error-too-long').slideUp("slow");
       return false;
     } else if (data.length === 0) {
-      alert("Tweet is empty. Cannot submit");
+      $('#error-blank').slideDown("slow");
       return false;
     } else
       return true;
@@ -93,6 +99,7 @@ $(document).ready(function() {
         console.log("Tweet submitted!");
         formData.val("");
         loadTweets();
+
       }).catch((error) => { console.error("Couldn't submit tweet"); });
     }
   });

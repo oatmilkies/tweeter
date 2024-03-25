@@ -59,3 +59,17 @@
 .red-counter {
   color: red;
 }
+
+.error-message {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: red;
+  border: 3px solid;
+  margin-bottom: 20px;
+}
+
+.fa-solid {
+  padding-left: 20px;
+  padding-right: 20px
+}

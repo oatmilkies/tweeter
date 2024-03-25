@@ -60,6 +60,16 @@
   <main>
 
     <section class="new-tweet">
+      <div class="error-message" id="error-too-long">
+        <i class="fa-solid fa-triangle-exclamation" style="color: #ff0000;"></i>
+        <p>Tweet too long! 140 characters MAX</p>
+        <i class="fa-solid fa-triangle-exclamation" style="color: #ff0000;"></i>
+      </div>
+      <div class="error-message" id="error-blank">
+        <i class="fa-solid fa-triangle-exclamation" style="color: #ff0000;"></i>
+        <p>Can't submit a blank tweet!</p>
+        <i class="fa-solid fa-triangle-exclamation" style="color: #ff0000;"></i>
+      </div>
       <div class="textarea-container">
         <form method="POST" action="/tweets" id="tweet-form">
           <label class="tweet-text" for="tweet-text">What are you humming about?</label>

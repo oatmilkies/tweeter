@@ -68,8 +68,8 @@ $(document).ready(function() {
 
   //Check that the tweet is not empty or too long
   const validateData = function(data) {
-    $('#error-too-long').hide();
-    $('#error-blank').hide();
+    $('#error-too-long').slideUp("slow");
+    $('#error-blank').slideUp("slow");
 
     if (data.length > 140) {
       $('#error-too-long').slideDown("slow");

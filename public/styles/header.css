@@ -16,3 +16,11 @@
   font-style: normal;
   color: white;
 }
+
+@media only screen and (min-width: 1024px) {
+  .header-box {
+    width: 25%;
+    float: left;
+    margin-top: 150px;
+  }
+}

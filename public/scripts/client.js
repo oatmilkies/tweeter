@@ -54,11 +54,13 @@ $(document).ready(function() {
   //Check that the tweet is not empty or too long
   const validateData = function(data) {
     if (data.length > 140) {
-      $("#tweet-form").append("Tweet too long! Cannot submit");
-    } else if (data === "") {
-      $("#tweet-form").append("Cannot submit empty tweet");
-    } else
+      alert("Tweet too long. Cannot submit");
+      return false
+    } else if (data.length === 0) {
+      alert("Tweet is empty. Cannot submit");
       return false;
+    } else
+      return true;
   };
 
 

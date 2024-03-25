@@ -10,25 +10,35 @@ $(document).ready(function() {
     //Create the tweet using the same format as in index.html
     const tweetTime = timeago.format(tweetData["created_at"]);
 
-    const markup = `
-    <article class="tweet">
-      <header>
-        <span>${tweetData.user.name}</span>
-        <span class="user-handle">${tweetData.user.handle}</span>
-      </header>
-      <p class="tweet-content">${tweetData.content.text}</p>
-      <footer>
-        <span>${tweetTime}</span>
-        <span class="icons">
-          <i class="fa-solid fa-flag"></i>
-          <i class="fa-solid fa-retweet"></i>
-          <i class="fa-solid fa-heart"></i>
-        </span>
-      </footer>
-    </article>
-  `;
+    const $post = $(`<article class="tweet">`);
+    const $postHeader = $("<header>");
+    const $postUser = $("<span>");
+    const $postHandle = $(`<span class="user-handle">`);
+    const $postData = $(`<p class="tweet-content">`);
+    const $postFooter = $("<footer>");
+    const $postTime = $("<span>");
+    const $postIcons = $(`<span class="icons>`);
+    const $postFlag = $(`<i class="fa-solid fa-flag">`);
+    const $postRetweet = $(`<i class="fa-solid fa-retweet">`);
+    const $postLike = $(`<i class="fa-solid fa-heart"></i>`);
 
-    return markup;
+    $postUser.text(`${tweetData.user.name}`);
+    $postHandle.text(`${tweetData.user.handle}`);
+    $postData.text(`${tweetData.content.text}`);
+    $postTime.text(`${tweetTime}`);
+
+    $post.append($postHeader);
+    $postHeader.append($postUser);
+    $postHeader.append($postHandle);
+    $post.append($postData);
+    $post.append($postFooter);
+    $postFooter.append($postTime);
+    $postFooter.append($postIcons);
+    $postIcons.append($postFlag);
+    $postIcons.append($postRetweet);
+    $postIcons.append($postLike);
+
+    return $post;
   };
 
 
@@ -46,7 +56,7 @@ $(document).ready(function() {
     $.ajax("/tweets", "initial-tweets.json", { method: "GET" })
       .then(initialTweets => {
         $('.tweet-container').empty();
-        renderTweets(initialTweets)
+        renderTweets(initialTweets);
       })
       .catch(err => console.log(err));
   };
@@ -58,7 +68,7 @@ $(document).ready(function() {
   const validateData = function(data) {
     if (data.length > 140) {
       alert("Tweet too long. Cannot submit");
-      return false
+      return false;
     } else if (data.length === 0) {
       alert("Tweet is empty. Cannot submit");
       return false;
@@ -82,7 +92,7 @@ $(document).ready(function() {
       }).then((response) => {
         console.log("Tweet submitted!");
         formData.val("");
-        loadTweets();        
+        loadTweets();
       }).catch((error) => { console.error("Couldn't submit tweet"); });
     }
   });

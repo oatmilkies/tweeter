@@ -42,13 +42,13 @@ $(document).ready(function() {
 
 
   //Load tweets
-  const loadTweets = function(tweetData) {
-    $.ajax("/tweets", tweetData, { method: "GET" })
+  const loadTweets = function() {
+    $.ajax("/tweets", "initial-tweets.json", { method: "GET" })
       .then(initialTweets => renderTweets(initialTweets))
       .catch(err => console.log(err));
   };
 
-  loadTweets("initial-tweets.json");
+  loadTweets();
 
 
   //Check that the tweet is not empty or too long
@@ -79,8 +79,7 @@ $(document).ready(function() {
       }).then((response) => {
         console.log("Tweet submitted!");
         formData.val("");
-        ('.tweet').remove();
-        loadTweets(serializedData);        
+        loadTweets();        
       }).catch((error) => { console.error("Couldn't submit tweet"); });
     }
   });

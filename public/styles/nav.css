@@ -33,3 +33,22 @@
   font-style: normal;
   padding-bottom: .5em;
 }
+
+#angles-down-icon {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+#angles-down-icon:hover {
+  cursor: pointer;
+  animation-name: bounce;
+  animation-timing-function: ease;
+}
+
+@keyframes bounce {
+0%   { transform: translateY(0); }
+50%  { transform: translateY(-10px); }
+100% { transform: translateY(0); }
+}

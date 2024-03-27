@@ -33,12 +33,18 @@
 
 header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: flex-start;
   font-weight: lighter;
   margin: 30px 30px 0;
 }
 
+.user-avatar-name {
+  padding: 0 5px 0 5px
+}
+
 .user-handle {
+  margin-left: auto;
   font-weight: bold;
   color: #969eb7;
 }

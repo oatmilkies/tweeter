@@ -14,7 +14,8 @@ $(document).ready(function() {
 
     const $post = $(`<article class="tweet">`);
     const $postHeader = $("<header>");
-    const $postUser = $("<span>");
+    const $postAvatar = $(`<img class="user-avatar-name">`);
+    const $postUserName = $(`<span class="user-avatar-name">`);
     const $postHandle = $(`<span class="user-handle">`);
     const $postData = $(`<p class="tweet-content">`);
     const $postFooter = $("<footer>");
@@ -24,13 +25,15 @@ $(document).ready(function() {
     const $postRetweet = $(`<i class="fa-solid fa-retweet">`);
     const $postLike = $(`<i class="fa-solid fa-heart"></i>`);
 
-    $postUser.text(`${tweetData.user.name}`);
+    $postAvatar.attr('src', `${tweetData.user.avatars}`)
+    $postUserName.text(`${tweetData.user.name}`);
     $postHandle.text(`${tweetData.user.handle}`);
     $postData.text(`${tweetData.content.text}`);
     $postTime.text(`${tweetTime}`);
 
     $post.append($postHeader);
-    $postHeader.append($postUser);
+    $postHeader.append($postAvatar);
+    $postHeader.append($postUserName);
     $postHeader.append($postHandle);
     $post.append($postData);
     $post.append($postFooter);

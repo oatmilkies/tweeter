@@ -12,7 +12,7 @@ $(document).ready(function() {
 
   //Show the post a new tweet area when the double angle down icon is clicked
   $('#angles-down-icon').on("click", () => {
-    $('.new-tweet').slideDown("slow");
+    $('.new-tweet').slideToggle("slow");    
   });
 
   //Create the tweet element

@@ -8,8 +8,8 @@ $(document).ready(function() {
   $('#error-too-long').hide();
   $('#error-blank').hide();
 
+  //Create the tweet element
   const createTweetElement = function(tweetData) {
-    //Create the tweet using the same format as in index.html
     const tweetTime = timeago.format(tweetData["created_at"]);
 
     const $post = $(`<article class="tweet">`);

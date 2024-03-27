@@ -40,6 +40,7 @@ header {
 }
 
 .user-avatar-name {
+  align-self: center;
   padding: 0 5px 0 5px
 }
 

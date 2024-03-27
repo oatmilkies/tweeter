@@ -7,6 +7,12 @@
 $(document).ready(function() {
   $('#error-too-long').hide();
   $('#error-blank').hide();
+  $('.new-tweet').hide();
+
+  //Show the post a new tweet area when the double arrow icon is clicked
+  $('#angles-down-icon').on("click", () => {
+    $('.new-tweet').slideDown("slow");
+  });
 
   //Create the tweet element
   const createTweetElement = function(tweetData) {
@@ -101,6 +107,7 @@ $(document).ready(function() {
       }).then((response) => {
         console.log("Tweet submitted!");
         formData.val("");
+        $('.new-tweet').slideUp("slow");
         loadTweets();
 
       }).catch((error) => { console.error("Couldn't submit tweet"); });

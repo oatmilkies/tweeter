@@ -5,11 +5,12 @@
  */
 
 $(document).ready(function() {
+  //Hide error messages and new tweet area when the page loads
   $('#error-too-long').hide();
   $('#error-blank').hide();
   $('.new-tweet').hide();
 
-  //Show the post a new tweet area when the double arrow icon is clicked
+  //Show the post a new tweet area when the double angle down icon is clicked
   $('#angles-down-icon').on("click", () => {
     $('.new-tweet').slideDown("slow");
   });
